@@ -8,7 +8,6 @@ source 'https://rubygems.org'
 ruby '#{RUBY_VERSION}'
 
 gem 'devise'
-gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
@@ -109,13 +108,6 @@ HTML
 run 'curl -L https://raw.githubusercontent.com/lewagon/awesome-navbars/master/templates/_navbar_wagon.html.erb > app/views/shared/_navbar.html.erb'
 run 'curl -L https://raw.githubusercontent.com/lewagon/rails-templates/master/logo.png > app/assets/images/logo.png'
 
-# README
-########################################
-markdown_file_content = <<-MARKDOWN
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
-MARKDOWN
-file 'README.md', markdown_file_content, force: true
-
 # Generators
 ########################################
 generators = <<-RUBY
@@ -191,14 +183,9 @@ RUBY
   environment 'config.action_mailer.default_url_options = { host: "http://localhost:3000" }', env: 'development'
   environment 'config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }', env: 'production'
 
-  # Figaro
-  ########################################
-  run 'bundle binstubs figaro'
-  run 'figaro install'
-
   # Git
   ########################################
   git :init
   git add: '.'
-  git commit: "-m 'Initial commit with devise template from https://github.com/lewagon/rails-templates'"
+  git commit: "-m 'Initial commit with devise'"
 end
