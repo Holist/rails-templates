@@ -29,9 +29,9 @@ group :development, :test do
   # gem 'pry-rails'
   gem 'byebug'
   gem 'web-console', '>= 3.3.0'
-  # gem 'listen', '~> 3.0.5'
-  # gem 'spring'
-  # gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'listen', '>= 3.0.5'
+  gem 'spring'
+  gem 'spring-watcher-listen', '>= 2.0.0'
 end
 RUBY
 
@@ -47,9 +47,9 @@ YAML
 
 # Spring conf file
 ########################################
-# inject_into_file 'config/spring.rb', before: ').each { |path| Spring.watch(path) }' do
-#   '  config/application.yml\n'
-# end
+inject_into_file 'config/spring.rb', before: ').each { |path| Spring.watch(path) }' do
+  '  config/application.yml\n'
+end
 
 # Assets
 ########################################
