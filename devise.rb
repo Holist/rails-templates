@@ -55,13 +55,17 @@ YAML
 ########################################
 run 'rm -rf app/assets/stylesheets'
 run 'rm -rf vendor'
-run 'curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip'
+run 'curl -L https://github.com/Holist/rails-templates/raw/master/rails-stylesheets-master.zip > stylesheets.zip'
 run 'unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets'
 
 run 'rm app/assets/javascripts/application.js'
 file 'app/assets/javascripts/application.js', <<-JS
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
 JS
