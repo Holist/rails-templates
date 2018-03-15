@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'puma'
 gem 'rails', '#{Rails.version}'
-# gem 'bootsnap', require: false
+gem 'bootsnap', require: false
 
 gem 'turbolinks'
 gem 'autoprefixer-rails'
@@ -29,9 +29,9 @@ group :development, :test do
   # gem 'pry-rails'
   gem 'byebug'
   gem 'web-console'
-  # gem 'listen'
-  # gem 'spring'
-  # gem 'spring-watcher-listen'
+  gem 'listen'
+  gem 'spring'
+  gem 'spring-watcher-listen'
 end
 RUBY
 
@@ -47,9 +47,9 @@ YAML
 
 # Spring conf file
 ########################################
-# inject_into_file 'config/spring.rb', before: ').each { |path| Spring.watch(path) }' do
-#   '  config/application.yml\n'
-# end
+inject_into_file 'config/spring.rb', before: ').each { |path| Spring.watch(path) }' do
+  '  config/application.yml\n'
+end
 
 # Assets
 ########################################
