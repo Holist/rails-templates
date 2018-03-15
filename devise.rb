@@ -8,27 +8,30 @@ source 'https://rubygems.org'
 ruby '#{RUBY_VERSION}'
 
 gem 'devise'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'puma'
 gem 'rails', '#{Rails.version}'
-gem 'redis'
+gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'turbolinks'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 
 group :development, :test do
-  gem 'pry-byebug'
-  gem 'pry-rails'
+  # gem 'pry-byebug'
+  # gem 'pry-rails'
+  gem 'byebug'
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'listen', '~> 3.0.5'
+  # gem 'spring'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
 end
 RUBY
 
@@ -44,9 +47,9 @@ YAML
 
 # Spring conf file
 ########################################
-inject_into_file 'config/spring.rb', before: ').each { |path| Spring.watch(path) }' do
-  '  config/application.yml\n'
-end
+# inject_into_file 'config/spring.rb', before: ').each { |path| Spring.watch(path) }' do
+#   '  config/application.yml\n'
+# end
 
 # Assets
 ########################################
